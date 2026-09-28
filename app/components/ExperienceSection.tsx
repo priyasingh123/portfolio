@@ -11,7 +11,15 @@ const experiences = [
     logoStyle: "absolute max-w-none top-[10%] left-[10%] scale-175 rounded-3xl",
     summary:
       "Worked on developing and maintaining web applications using React and Node.js.",
-    technologies: ["React", "Node.js", "JavaScript", "HTML", "CSS"],
+    technologies: [
+      "React",
+      "Redux",
+      "Playwright",
+      "Java",
+      "TypeScript",
+      "Zustand",
+      "NodeJS",
+    ],
   },
   {
     title: "Software Engineer",
@@ -21,7 +29,7 @@ const experiences = [
     logoStyle: "",
     summary:
       "Worked on developing and maintaining web applications using React and Node.js.",
-    technologies: ["React", "Node.js", "JavaScript", "HTML", "CSS"],
+    technologies: ["React", "JavaScript", "HTML", "CSS", "Mobx", "Jest"],
   },
 ];
 
@@ -110,8 +118,30 @@ const ExperienceCard = ({
           <p>{duration}</p>
         </div>
         <p>{company}</p>
-        <p>{summary}</p>
+        <Skills technologies={technologies} />
       </div>
+    </div>
+  );
+};
+
+const Skills = ({
+  technologies,
+}: {
+  technologies: ExperienceCardProps["technologies"];
+}) => {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {technologies.map((tech, index) => {
+        return (
+          <div
+            className="shadow-[inset_0_0_10px_rgba(0,0,0,0.3)]  px-3 rounded-3xl 
+            bg-[linear-gradient(135deg,_#4f46e5_0%,_#7c3aed_100%)] flex-wrap"
+            key={`${tech}-${index}`}
+          >
+            <p>{tech}</p>
+          </div>
+        );
+      })}
     </div>
   );
 };
