@@ -1,0 +1,117 @@
+import Image from "next/image";
+import IntuitLogo from "../../assets/intuit-svg.svg";
+import UBSLogo from "../../assets/UBS-svg.svg";
+
+const experiences = [
+  {
+    title: "Software Engineer 2",
+    company: "Intuit",
+    duration: "2023-2025",
+    logo: IntuitLogo,
+    logoStyle: "absolute max-w-none top-[10%] left-[10%] scale-175 rounded-3xl",
+    summary:
+      "Worked on developing and maintaining web applications using React and Node.js.",
+    technologies: ["React", "Node.js", "JavaScript", "HTML", "CSS"],
+  },
+  {
+    title: "Software Engineer",
+    company: "UBS",
+    duration: "2019-2022",
+    logo: UBSLogo,
+    logoStyle: "",
+    summary:
+      "Worked on developing and maintaining web applications using React and Node.js.",
+    technologies: ["React", "Node.js", "JavaScript", "HTML", "CSS"],
+  },
+];
+
+const ExperienceSection = () => {
+  return (
+    <div className="flex flex-col md:flex-row">
+      <ExpHeading />
+      <Experience experiences={experiences} />
+    </div>
+  );
+};
+
+export default ExperienceSection;
+
+const ExpHeading = () => {
+  return (
+    <div className="flex flex-col flex-[2]">
+      <p className="mb-4">EXPERIENCE</p>
+      <h1 className="text-3xl text-white font-bold tracking-tight md:text-5xl">
+        Where I&apos;ve worked
+      </h1>
+      <p className="mt-4 text-xl text-neutral-400 md:text-2xl">
+        Building user interfaces, solving engineering problems, and working with
+        modern frontend technologies.
+      </p>
+    </div>
+  );
+};
+
+interface ExperienceCardProps {
+  title: string;
+  company: string;
+  duration: string;
+  summary: string;
+  logo: string;
+  logoStyle: string;
+  technologies: string[];
+}
+
+const Experience = ({
+  experiences,
+}: {
+  experiences: ExperienceCardProps[];
+}) => {
+  return (
+    <div className="flex-[2] align">
+      {experiences.map((exp, index) => (
+        <ExperienceCard
+          key={index}
+          title={exp.title}
+          logoStyle={exp.logoStyle}
+          logo={exp.logo}
+          company={exp.company}
+          duration={exp.duration}
+          summary={exp.summary}
+          technologies={exp.technologies}
+        />
+      ))}
+    </div>
+  );
+};
+
+const ExperienceCard = ({
+  logo,
+  logoStyle,
+  title,
+  company,
+  duration,
+  summary,
+  technologies,
+}: ExperienceCardProps) => {
+  return (
+    <div className="exp-card flex p-4 m-4">
+      <div className="relative w-[100px] h-[100px] overflow-hidden m-2 shrink-0 rounded-3xl">
+        <Image
+          src={logo}
+          alt="Intuit"
+          width={80}
+          height={80}
+          className={logoStyle}
+        />
+      </div>
+      <div>
+        <div className="flex justify-between">
+          <p className="text-lg font-semibold">{title}</p>
+          <p>{duration}</p>
+        </div>
+        <p>{company}</p>
+        <p>{summary}</p>
+      </div>
+    </div>
+  );
+};
