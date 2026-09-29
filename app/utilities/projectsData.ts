@@ -1,4 +1,7 @@
-import habitTracker from "../../assets/img/habit.jpg";
+import habitTracker from "../../assets/img/habit-tracker.png";
+import countryDisplay from "../../assets/img/country-display.png";
+import socialFeed from "../../assets/img/social-feed.png";
+import movieflix from "../../assets/img/movieflix.png";
 
 export const projects = [
   {
@@ -21,14 +24,14 @@ export const projects = [
   },
   {
     title: "Movieflix",
-    logo: habitTracker,
+    logo: movieflix,
     description:
       "A responsive React-based movie catalog featuring infinite scroll and genre filtering.",
     tech: ["ReactJs", "React-Virtuoso", "CSS", "HTML"],
   },
   {
     title: "Social Feed",
-    logo: habitTracker,
+    logo: socialFeed,
     description:
       "Full-stack social media application with user authentication and real-time interactions",
     tech: [
@@ -44,7 +47,7 @@ export const projects = [
   },
   {
     title: "Country Display",
-    logo: habitTracker,
+    logo: countryDisplay,
     description:
       "Interactive country search application with debounced search and detailed country information.",
     tech: ["ReactJs", "TypeScript", "HTML", "CSS", "REST API"],

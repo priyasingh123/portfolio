@@ -38,7 +38,7 @@ const Projects = ({
   projectsDetails: ProjectCardProps[];
 }) => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 flex-wrap">
       {projectsDetails.map((detail) => {
         return <ProjectCard key={detail.title} detail={detail} />;
       })}
@@ -48,8 +48,12 @@ const Projects = ({
 
 const ProjectCard = ({ detail }: { detail: ProjectCardProps }) => {
   return (
-    <div className="project-card flex flex-col flex-wrap p-4">
-      <Image src={detail.logo} className="habit" alt={detail.title} />
+    <div className="project-card flex flex-col flex-wrap p-4 w-[530px]">
+      <Image
+        src={detail.logo}
+        alt={detail.title}
+        className="w-[530px] h-auto object-contain"
+      />
       <p className="text-base md:text-lg font-bold">{detail.title}</p>
       <p>{detail.description}</p>
       <Skills skills={detail.tech} />
