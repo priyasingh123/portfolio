@@ -8,7 +8,8 @@ const experiences = [
     company: "Intuit",
     duration: "2023-2025",
     logo: IntuitLogo,
-    logoStyle: "absolute max-w-none top-[10%] left-[10%] scale-175 rounded-3xl",
+    // logoStyle: "absolute max-w-none top-[10%] left-[10%] scale-175 rounded-3xl",
+    logoStyle: "",
     summary:
       "Worked on developing and maintaining web applications using React and Node.js.",
     technologies: [
@@ -47,7 +48,7 @@ export default ExperienceSection;
 const ExpHeading = () => {
   return (
     <div className="flex flex-col flex-[2]">
-      <p className="mb-4">EXPERIENCE</p>
+      <p className="mb-4 text-white">EXPERIENCE</p>
       <h1 className="text-3xl text-white font-bold tracking-tight md:text-5xl">
         Where I&apos;ve worked
       </h1>
@@ -103,10 +104,10 @@ const ExperienceCard = ({
 }: ExperienceCardProps) => {
   return (
     <div className="exp-card flex p-4 m-4">
-      <div className="relative w-[100px] h-[100px] overflow-hidden m-2 shrink-0 rounded-3xl">
+      <div className="relative w-[100px] h-[100px] overflow-hidden m-2 md:shrink-0 rounded-3xl">
         <Image
           src={logo}
-          alt="Intuit"
+          alt={company}
           width={80}
           height={80}
           className={logoStyle}
@@ -114,10 +115,10 @@ const ExperienceCard = ({
       </div>
       <div>
         <div className="flex justify-between">
-          <p className="text-lg font-semibold">{title}</p>
-          <p>{duration}</p>
+          <p className="text-sm md:text-lg font-semibold">{title}</p>
+          <p className="text-sm md:text-lg">{duration}</p>
         </div>
-        <p>{company}</p>
+        <p className="text-sm md:text-lg">{company}</p>
         <Skills technologies={technologies} />
       </div>
     </div>
@@ -134,7 +135,7 @@ const Skills = ({
       {technologies.map((tech, index) => {
         return (
           <div
-            className="shadow-[inset_0_0_10px_rgba(0,0,0,0.3)]  px-3 rounded-3xl 
+            className="shadow-[inset_0_0_10px_rgba(0,0,0,0.3)] text-sm md:text-lg px-3 rounded-3xl 
             bg-[linear-gradient(135deg,_#4f46e5_0%,_#7c3aed_100%)] flex-wrap"
             key={`${tech}-${index}`}
           >

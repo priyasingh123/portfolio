@@ -40,6 +40,10 @@ body {
 .experience {
   background: linear-gradient(45deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%);
 }
+
+.projects {
+  background: linear-gradient(0deg, #7c3aed 0%, #4f46e5 50%, #2563eb 100%);
+}
 .exp-card {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   color: #ffffff;
