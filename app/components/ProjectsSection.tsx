@@ -76,7 +76,7 @@ const ProjectCard = ({ detail }: { detail: ProjectCardProps }) => {
           height={20}
           className="text-white"
         />
-        <p>Live Demo</p>
+        <p className="text-white">Live Demo</p>
       </a>
     </div>
   );
