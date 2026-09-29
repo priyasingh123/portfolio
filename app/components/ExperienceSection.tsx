@@ -1,38 +1,6 @@
 import Image from "next/image";
-import IntuitLogo from "../../assets/intuit-svg.svg";
-import UBSLogo from "../../assets/UBS-svg.svg";
-
-const experiences = [
-  {
-    title: "Software Engineer 2",
-    company: "Intuit",
-    duration: "2023-2025",
-    logo: IntuitLogo,
-    // logoStyle: "absolute max-w-none top-[10%] left-[10%] scale-175 rounded-3xl",
-    logoStyle: "",
-    summary:
-      "Worked on developing and maintaining web applications using React and Node.js.",
-    technologies: [
-      "React",
-      "Redux",
-      "Playwright",
-      "Java",
-      "TypeScript",
-      "Zustand",
-      "NodeJS",
-    ],
-  },
-  {
-    title: "Software Engineer",
-    company: "UBS",
-    duration: "2019-2022",
-    logo: UBSLogo,
-    logoStyle: "",
-    summary:
-      "Worked on developing and maintaining web applications using React and Node.js.",
-    technologies: ["React", "JavaScript", "HTML", "CSS", "Mobx", "Jest"],
-  },
-];
+import { Skills } from "./commonComponents";
+import { experiences } from "../utilities/experienceData";
 
 const ExperienceSection = () => {
   return (
@@ -99,7 +67,6 @@ const ExperienceCard = ({
   title,
   company,
   duration,
-  summary,
   technologies,
 }: ExperienceCardProps) => {
   return (
@@ -119,30 +86,8 @@ const ExperienceCard = ({
           <p className="text-sm md:text-lg">{duration}</p>
         </div>
         <p className="text-sm md:text-lg">{company}</p>
-        <Skills technologies={technologies} />
+        <Skills skills={technologies} />
       </div>
-    </div>
-  );
-};
-
-const Skills = ({
-  technologies,
-}: {
-  technologies: ExperienceCardProps["technologies"];
-}) => {
-  return (
-    <div className="flex flex-wrap gap-2">
-      {technologies.map((tech, index) => {
-        return (
-          <div
-            className="shadow-[inset_0_0_10px_rgba(0,0,0,0.3)] text-sm md:text-lg px-3 rounded-3xl 
-            bg-[linear-gradient(135deg,_#4f46e5_0%,_#7c3aed_100%)] flex-wrap"
-            key={`${tech}-${index}`}
-          >
-            <p>{tech}</p>
-          </div>
-        );
-      })}
     </div>
   );
 };
