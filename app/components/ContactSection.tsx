@@ -51,9 +51,7 @@ const ContactLinks = () => {
 
         <div>
           <p className="text-lg font-bold text-white">LinkedIn</p>
-          <p className="text-sm text-white-400">
-            Connect with me professionally
-          </p>
+          <p className="text-sm text-white">Connect with me professionally</p>
         </div>
 
         <span className="ml-2 text-white-400 transition-colors group-hover:text-white">
@@ -86,7 +84,7 @@ const ContactLinks = () => {
 
         <div>
           <p className="text-lg font-bold text-white">Email</p>
-          <p className="text-sm text-white-400">Drop me a message</p>
+          <p className="text-sm text-white">Drop me a message</p>
         </div>
 
         <span className="ml-2 text-white-400 transition-colors group-hover:text-white">
