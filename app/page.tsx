@@ -1,6 +1,8 @@
 import PortfolioSection from "./components/PortfolioSection";
 import ExperienceSection from "./components/ExperienceSection";
 import ProjectsSection from "./components/ProjectsSection";
+import AboutSection from "./components/AboutSection";
+import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
@@ -42,13 +44,11 @@ export default function Home() {
         <ProjectsSection />
       </PortfolioSection>
 
-      <PortfolioSection id="skills" classes={["skills"]}>
-        <h2>Skills</h2>
-        <p>Here are some of the skills I&apos;ve developed.</p>
+      <PortfolioSection id="about" classes={["about"]}>
+        <AboutSection />
       </PortfolioSection>
       <PortfolioSection id="contact" classes={["contact"]}>
-        <h2>Contact</h2>
-        <p>Feel free to reach out if you&apos;d like to get in touch!</p>
+        <ContactSection />
       </PortfolioSection>
     </main>
   );

@@ -44,6 +44,15 @@ body {
 .projects {
   background: linear-gradient(100deg, #2563eb 0%, #453bf8 50%, #7226f5 100%);
 }
+
+.about {
+  background: linear-gradient(100deg, #444df2 0%, #8f2ff5 50%, #a15aed 100%);
+}
+
+.contact {
+  background: linear-gradient(160deg, #444df2 0%, #8f2ff5 50%, #a15aed 100%);
+}
+
 .exp-card {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   color: #ffffff;
